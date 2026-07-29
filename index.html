@@ -45,8 +45,11 @@
     }
 
     .page {
-      width: min(760px, calc(100% - 40px));
+      max-width: 1000px;  
+      width: 100%;
       margin: 0 auto;
+      padding: 0 20px; 
+      box-sizing: border-box;
     }
 
     header {
@@ -244,7 +247,11 @@
 
     @media (max-width: 600px) {
       .page {
-        width: min(100% - 32px, 760px);
+        max-width: 1000px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        box-sizing: border-box;
       }
 
       header {
@@ -377,7 +384,7 @@
       <section aria-labelledby="interests">
         <h2 id="interests"><span class="emoji" aria-hidden="true">🎵</span>Interests</h2>
         <p class="interest-row"><strong>Sports</strong> Badminton, Basketball and Table Tennis</p>
-        <p class="interest-row"><strong>Music</strong> Saxophone, Flute and Guitar; member of the Marching Band of the Beihang University Student Art Troupe</p>
+        <p class="interest-row"><strong>Music</strong> Saxophone, Flute and Guitar. Member of BUAA Marching Band of the Student Art Troupe</p>
       </section>
     </main>
 
