@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The personal homepage of Ming Cheng, an undergraduate student at Beihang University.">
+  <title>Ming Cheng — Personal Homepage</title>
+  <style>
+    :root {
+      --text: #202124;
+      --muted: #666b72;
+      --line: #e7e7e7;
+      --link: #245c8a;
+      --white: #ffffff;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--white);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    .page {
+      width: min(760px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      padding: 72px 0 48px;
+      align-items: center;
+      gap: 34px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .portrait {
+      width: 148px;
+      height: 148px;
+      flex: 0 0 148px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: 58% center;
+    }
+
+    h1,
+    h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+    }
+
+    h1 {
+      margin: 0 0 7px;
+      font-size: clamp(44px, 7vw, 66px);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+    }
+
+    .role {
+      margin: 0 0 15px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      font-size: 15px;
+    }
+
+    main {
+      padding-bottom: 52px;
+    }
+
+    section {
+      padding: 42px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      display: flex;
+      margin: 0 0 21px;
+      align-items: center;
+      gap: 11px;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+
+    .emoji {
+      width: 32px;
+      font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+      font-size: 25px;
+      line-height: 1;
+      text-align: center;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .information {
+      display: grid;
+      margin: 0;
+      grid-template-columns: 130px 1fr;
+      gap: 12px 22px;
+    }
+
+    .information dt {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .information dd {
+      margin: 0;
+    }
+
+    .research-areas {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      gap: 9px;
+    }
+
+    .research-areas span {
+      padding: 5px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #3f454b;
+      font-size: 14px;
+    }
+
+    ol,
+    ul {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    li {
+      padding-left: 5px;
+    }
+
+    li + li {
+      margin-top: 13px;
+    }
+
+    .year {
+      color: var(--muted);
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .publication-list {
+      padding-left: 0;
+      list-style: none;
+      counter-reset: papers;
+    }
+
+    .publication-list li {
+      position: relative;
+      padding-left: 42px;
+      counter-increment: papers;
+    }
+
+    .publication-list li::before {
+      position: absolute;
+      top: 1px;
+      left: 0;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: 19px;
+      content: counter(papers, decimal-leading-zero);
+    }
+
+    .paper-title {
+      display: block;
+      margin-bottom: 4px;
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .authors {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .authors strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .interest-row + .interest-row {
+      margin-top: 12px;
+    }
+
+    .interest-row {
+      padding-left: 88px;
+      text-indent: -88px;
+    }
+
+    .interest-row strong {
+      display: inline-block;
+      width: 88px;
+      min-width: 0;
+      text-indent: 0;
+    }
+
+    footer {
+      padding: 28px 0 44px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(36, 92, 138, 0.25);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        width: min(100% - 32px, 760px);
+      }
+
+      header {
+        padding: 48px 0 38px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .portrait {
+        width: 120px;
+        height: 120px;
+        flex-basis: 120px;
+      }
+
+      h1 {
+        font-size: 50px;
+      }
+
+      section {
+        padding: 34px 0;
+      }
+
+      h2 {
+        font-size: 27px;
+      }
+
+      .information {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .information dd + dt {
+        margin-top: 11px;
+      }
+
+      .interest-row strong {
+        display: inline-block;
+        width: 78px;
+      }
+
+      .interest-row {
+        padding-left: 78px;
+        text-indent: -78px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <img class="portrait" src="Myself.png" alt="Portrait of Ming Cheng" width="1280" height="1280">
+      <div>
+        <h1>Ming Cheng</h1>
+        <p class="role">Undergraduate Student at Beihang University</p>
+        <div class="quick-links" aria-label="Contact links">
+          <a href="mailto:mingcheng98@outlook.com">mingcheng98@outlook.com</a>
+          <a href="tel:+8615391551379">+86 153 9155 1379</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="basic-information">
+        <h2 id="basic-information"><span class="emoji" aria-hidden="true">👤</span>Basic Information</h2>
+        <dl class="information">
+          <dt>Name</dt>
+          <dd>Ming Cheng</dd>
+
+          <dt>Affiliation</dt>
+          <dd>School of Computer Science and Engineering, Beihang University</dd>
+
+          <dt>Address</dt>
+          <dd>No. 37 Xueyuan Road, Haidian District, Beijing, China</dd>
+
+          <dt>Phone</dt>
+          <dd><a href="tel:+8615391551379">+86 153 9155 1379</a></dd>
+
+          <dt>Email</dt>
+          <dd><a href="mailto:mingcheng98@outlook.com">mingcheng98@outlook.com</a></dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="profile">
+        <h2 id="profile"><span class="emoji" aria-hidden="true">💡</span>Profile</h2>
+        <p>
+          I am a 2025-entry undergraduate student at the School of Computer Science and Engineering, Beihang University, with a GPA of 3.88. Under the supervision of Professor Wenge Rong, my primary research interests include machine learning, data mining, and natural language processing.
+        </p>
+        <div class="research-areas" aria-label="Research interests">
+          <span>Machine Learning</span>
+          <span>Data Mining</span>
+          <span>Natural Language Processing</span>
+        </div>
+      </section>
+
+      <section aria-labelledby="awards">
+        <h2 id="awards"><span class="emoji" aria-hidden="true">🏆</span>Awards</h2>
+        <ol>
+          <li>Third Prize, National College Student Mathematics Competition <span class="year">(2025)</span></li>
+          <li>Second Prize, Chinese Chemistry Olympiad — Preliminary Round <span class="year">(2024)</span></li>
+          <li>Second Prize, Chinese Mathematical Olympiad — Preliminary Round <span class="year">(2024)</span></li>
+          <li>Second Prize, National High School Physics Competition <span class="year">(2024)</span></li>
+          <li>Second Prize, Chinese Mathematical Olympiad — Preliminary Round <span class="year">(2023)</span></li>
+          <li>Third Prize, Chinese Chemistry Olympiad — Preliminary Round <span class="year">(2023)</span></li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="honors">
+        <h2 id="honors"><span class="emoji" aria-hidden="true">🌟</span>Honors</h2>
+        <ol>
+          <li>Outstanding Student of Beihang University, 2025–2026 Academic Year</li>
+          <li>Outstanding Student Leader of Wuhan Primary and Secondary Schools, 2024–2025 Academic Year</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="publications">
+        <h2 id="publications"><span class="emoji" aria-hidden="true">📄</span>Publications</h2>
+        <ol class="publication-list">
+          <li>
+            <span class="paper-title">An AIoT-Based Cloud–Edge–Endpoint Collaborative Anomaly Detection Platform for Power Distribution Rooms</span>
+            <span class="authors">Guangyuan Shi, Xudong Gang, <strong>Ming Cheng</strong></span>
+          </li>
+          <li>
+            <span class="paper-title">The Application and Reflection of Generative Artificial Intelligence in Anti-Corruption Communication</span>
+            <span class="authors">Yuqing He, Ziyan Luo, Bowen Song, <strong>Ming Cheng</strong></span>
+          </li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="interests">
+        <h2 id="interests"><span class="emoji" aria-hidden="true">🎵</span>Interests</h2>
+        <p class="interest-row"><strong>Sports</strong> Badminton and table tennis</p>
+        <p class="interest-row"><strong>Music</strong> Saxophone, flute, and guitar; member of the Marching Band of the Beihang University Student Art Troupe</p>
+      </section>
+    </main>
+
+    <footer>© 2026 Ming Cheng</footer>
+  </div>
+</body>
+</html>
