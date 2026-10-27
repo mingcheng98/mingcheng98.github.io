@@ -66,7 +66,7 @@
       flex: 0 0 148px;
       border-radius: 50%;
       object-fit: cover;
-      object-position: 58% center;
+      object-position: center;
     }
 
     h1,
@@ -93,6 +93,32 @@
       flex-wrap: wrap;
       gap: 6px 18px;
       font-size: 15px;
+    }
+
+    .blog-bar {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 20px;
+    }
+
+    .blog-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      border: 1px solid #f4c896;
+      border-radius: 999px;
+      color: #c05f10;
+      background: #fff6ec;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .blog-button:hover {
+      border-color: #e89b4b;
+      background: #ffefd9;
+      text-decoration: none;
     }
 
     main {
@@ -302,8 +328,12 @@
 </head>
 <body>
   <div class="page">
+    <nav class="blog-bar" aria-label="Blog link">
+      <a class="blog-button" href="https://mingcheng98.github.io/LittleFattyBlog" target="_blank" rel="noopener">🍊 mingcheng98's Orange</a>
+    </nav>
+
     <header>
-      <img class="portrait" src="Myself.png" alt="Portrait of Ming Cheng" width="1280" height="1280">
+      <img class="portrait" src="Gangshou.jpg" alt="Avatar of Ming Cheng" width="1080" height="1080">
       <div>
         <h1>Ming Cheng</h1>
         <p class="role">Undergraduate Student at Beihang University</p>
@@ -373,6 +403,7 @@
       <section aria-labelledby="honors">
         <h2 id="honors"><span class="emoji" aria-hidden="true">🌟</span>Honors</h2>
         <ol>
+          <li>One-Star Volunteer of Haidian District, Beijing <span class="year">(2026)</span></li>
           <li>Outstanding Student of Beihang University, 2025–2026 Academic Year</li>
           <li>Outstanding Student Leader of Wuhan Primary and Secondary Schools, 2024–2025 Academic Year</li>
         </ol>
